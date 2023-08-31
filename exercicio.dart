@@ -13,12 +13,15 @@ void main() {
   for (var i = 0; i < 3; i++) {
     print('informe seu genero: ');
     genero = stdin.readLineSync();
+
     print('informe a sua altura: ');
     valorAltura = stdin.readLineSync();
+
     double altura = double.tryParse(valorAltura.replaceAll(',', '.')) ?? -1;
-    if (genero == 'f' && altura > 0) {
+
+    if (genero == 'f' && altura > 0 && !altura.isNaN) {
       qntMulher++;
-    } else if (genero == 'm' && altura > 0) {
+    } else if (genero == 'm' && altura > 0  && !altura.isNaN) {
       qntHomem++;
       mediaAltura += altura;
     } else {
